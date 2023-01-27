@@ -3,12 +3,12 @@ BaseCase.main(__name__, __file__)
 
 
 class BaseTestCase(BaseCase):
-    def setUp(self):
-        super().setUp()
+    def set_up(self):
+        super().set_up()
         # <<< Run custom code AFTER the super() line >>>
 
-    def tearDown(self):
-        self.save_teardown_screenshot()
+    def tear_down(self):
+        self.save_tear_down_screenshot()
         if self.has_exception():
             # <<< Run custom code if the test failed. >>>
             pass
@@ -17,7 +17,7 @@ class BaseTestCase(BaseCase):
             pass
         # (Wrap unreliable code in a try/except block.)
         # <<< Run custom code BEFORE the super() line >>>
-        super().tearDown()
+        super().tear_down()
 
     def login(self):
         # <<< Placeholder. Add your code here. >>>
